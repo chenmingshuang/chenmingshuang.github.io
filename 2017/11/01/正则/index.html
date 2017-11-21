@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="工具," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="正则表达式什么是正则正则表达式是一种特殊的字符串模式，用于匹配一组字符串，就好比用模具做产品，而正则就是这个模具，定义一种规则去匹配符合规则的字符。 正则表达式基本语法创建一个正则表达式第一种方法：1var reg = /pattern/; 第二种方法:1var reg = new RegExp(&amp;apos;pattern&amp;apos;);  正则表达式的exec方法简介语法:reg.exec(st">
+<meta name="keywords" content="工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则">
+<meta property="og:url" content="http://yoursite.com/2017/11/01/正则/index.html">
+<meta property="og:site_name" content="隔壁老陳的博客">
+<meta property="og:description" content="正则表达式什么是正则正则表达式是一种特殊的字符串模式，用于匹配一组字符串，就好比用模具做产品，而正则就是这个模具，定义一种规则去匹配符合规则的字符。 正则表达式基本语法创建一个正则表达式第一种方法：1var reg = /pattern/; 第二种方法:1var reg = new RegExp(&amp;apos;pattern&amp;apos;);  正则表达式的exec方法简介语法:reg.exec(st">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-18T09:09:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则">
+<meta name="twitter:description" content="正则表达式什么是正则正则表达式是一种特殊的字符串模式，用于匹配一组字符串，就好比用模具做产品，而正则就是这个模具，定义一种规则去匹配符合规则的字符。 正则表达式基本语法创建一个正则表达式第一种方法：1var reg = /pattern/; 第二种方法:1var reg = new RegExp(&amp;apos;pattern&amp;apos;);  正则表达式的exec方法简介语法:reg.exec(st">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/01/正则/"/>
+
+
+
+
+
+  <title>正则 | 隔壁老陳的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/chenmingshuang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">隔壁老陳的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/正则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenmingshuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隔壁老陳的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">正则</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T11:42:56+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/regexp/" itemprop="url" rel="index">
+                    <span itemprop="name">regexp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="什么是正则"><a href="#什么是正则" class="headerlink" title="什么是正则"></a>什么是正则</h3><p>正则表达式是一种特殊的字符串模式，用于匹配一组字符串，就好比用模具做产品，而正则就是这个模具，定义一种规则去匹配符合规则的字符。</p>
+<h3 id="正则表达式基本语法"><a href="#正则表达式基本语法" class="headerlink" title="正则表达式基本语法"></a>正则表达式基本语法</h3><h4 id="创建一个正则表达式"><a href="#创建一个正则表达式" class="headerlink" title="创建一个正则表达式"></a>创建一个正则表达式</h4><p>第一种方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var reg = /pattern/;</span><br></pre></td></tr></table></figure></p>
+<p>第二种方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&apos;pattern&apos;);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="正则表达式的exec方法简介"><a href="#正则表达式的exec方法简介" class="headerlink" title="正则表达式的exec方法简介"></a>正则表达式的exec方法简介</h4><p>语法:<br><strong>reg.exec(str);</strong>其中str为要执行正则表达式的目标字符串。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"> var reg = /test/;</span><br><span class="line"> var str = &apos;testString&apos;;</span><br><span class="line"> var result = reg.exec(str);</span><br><span class="line"> alert(result);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将会输出<font color="red">test</font> ，因为正则表达式<strong>reg</strong>会匹配<strong>str(‘testString’)</strong>中的<strong>’test’</strong>子字符串，并且将其返回<br>我们使用下面的函数来做匹配正则的练习:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function execReg(reg,str)&#123;</span><br><span class="line"> var result = reg.exec(str);</span><br><span class="line"> alert(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>函数接受一个正则表达式参数reg和一个目标字符串参数str，执行之后会alert出正则表达式与字符串的匹配结果。<br>用这个函数测试上面的例子就是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"> function execReg(reg,str)&#123;</span><br><span class="line">var result = reg.exec(str);</span><br><span class="line">alert(result);</span><br><span class="line">   var reg = /test/;</span><br><span class="line"> var str = &apos;testString&apos;;</span><br><span class="line"> execReg(reg,str);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面的例子用正则里的<strong>test</strong>去匹配字符串里的<strong>test</strong>，（实在是很无聊）同样的任务用indexOf方法就可以完成了。<br><strong>用正则，自然是要完成更强大的功能:</strong><font color="red">一片两片三四片，落尽正则全不见</font><br>上面的小标题翻译成正则就是{1},{2},{3,4},{1,}。</p>
+<hr>
+<h4 id="c-n"><a href="#c-n" class="headerlink" title="c{n}"></a>c{n}</h4><p><strong>{1}</strong>表示一个的意思。 <strong>/c{1}/</strong>只能匹配一个c。 <strong>/c{2}/</strong>则会匹配两个连续的c。 以此类推, <strong>/c{n}/</strong>则会匹配n个连续的c。<br><strong>看看下面的例子：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;1&#125;/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str); // c</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">eg = /c&#123;2&#125;/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br><span class="line"> execReg(reg,str);// null</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;2&#125;/;</span><br><span class="line">str=&apos;ccVC果冻爽&apos;;</span><br><span class="line">execReg(reg,str);//  cc</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="c-m-n"><a href="#c-m-n" class="headerlink" title="c{m,n}"></a>c{m,n}</h4><p>如<strong>c{3,4}</strong>的意思是，连续的3个c或者4个c。<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;3,4&#125;/;</span><br><span class="line">str=&apos;ccVC果冻爽&apos;;</span><br><span class="line">execReg(reg,str);//null</span><br></pre></td></tr></table></figure></p>
+<p><strong>返回结果null表示没有匹配成功。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;3,4&#125;/;</span><br><span class="line">str=&apos;cccTest&apos;;</span><br><span class="line">execReg(reg,str);// ccc</span><br></pre></td></tr></table></figure></p>
+<p><strong>结果返回ccc。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;3,4&#125;/;</span><br><span class="line">str=&apos;ccccTest&apos;;</span><br><span class="line">execReg(reg,str);//cccc</span><br></pre></td></tr></table></figure></p>
+<p><strong>结果返回 ，这表明正则会尽量多品牌，可3可4的时候它会选择多匹配一个。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;3,4&#125;/;</span><br><span class="line">str=&apos;cccccTest&apos;;</span><br><span class="line">execReg(reg,str);//cccc</span><br></pre></td></tr></table></figure></p>
+<p><strong>仍然只匹配4个c。</strong><br>结论：<font color="red">由以上例子可以推断出，c{m,n}表示m个到n个c，且m小于等于n。</font></p>
+<hr>
+<h4 id="c-n-1"><a href="#c-n-1" class="headerlink" title="c{n,}"></a>c{n,}</h4><p><strong>c{1,}</strong>表示1个以上的c。例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;1,&#125;/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);//c</span><br></pre></td></tr></table></figure></p>
+<p> <strong>结果返回c。</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;1,&#125;/;</span><br><span class="line">str=&apos;cccccTest&apos;;</span><br><span class="line">execReg(reg,str);/c/ccccc</span><br></pre></td></tr></table></figure></p>
+<p><strong>返回ccccc，再次说明了正则表达式会尽量多地匹配。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;2,&#125;/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);//null</span><br></pre></td></tr></table></figure></p>
+<p><strong>结果返回 null，c{2,}表示2个以上的c，而cainiao中只有1个c。</strong><br>结论：<font color="red">由以上例子可知，c{n,}表示最少n个c，最多则不限个数。</font></p>
+<hr>
+<h4 id=""><a href="#" class="headerlink" title="*,+,?"></a>*,+,?</h4><p>1.<em>表示0次或者多次，等同于{0,}，即c</em>和 <strong>c{0,}</strong>是一个意思。<br>3.<font color="red">+</font>表示一次或者多次，等同于{1,}，即<font color="red">c+ </font>和 <strong>c{1,}</strong> 是一个意思。<br>3.<font color="red">?</font>表示0次或者1次，等同于{0,1}，即<font color="red">c?</font> 和 <strong>c{0,1}</strong> 是一个意思。</p>
+<h4 id="贪心-贪婪-与非贪心-非贪婪"><a href="#贪心-贪婪-与非贪心-非贪婪" class="headerlink" title="贪心(贪婪)与非贪心(非贪婪)"></a>贪心(贪婪)与非贪心(非贪婪)</h4><p>人都是贪婪的，正则也是如此。我们在例子<strong>reg = /c{3,4}/;str=’ccccTest’;</strong>的例子中已经看到了，能匹配四个的时候，正则绝对不会去匹配三个。 上面所介绍的所有的正则都是这样，只要在合法的情况下，它们会尽量多去匹配字符，这就叫做贪心(贪婪)模式。 如果我们希望正则尽量少地匹配字符，那么就可以在表示数字的符号后面加上一个?。组成如下的形式:<br><strong>{n,}?, *?, +?, ??, {m,n}?</strong><br>同样来看一个例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /c&#123;1,&#125;?/;</span><br><span class="line">str=&apos;ccccc&apos;;</span><br><span class="line">execReg(reg,str);//c</span><br></pre></td></tr></table></figure></p>
+<p>返回的结果只有1个<strong>c</strong>，尽管有5个c可以匹配，但是由于正则表达式是<strong>非贪心模式</strong>，所以只会匹配一个。</p>
+<hr>
+<h4 id="开头-结尾"><a href="#开头-结尾" class="headerlink" title="/^开头,结尾$/"></a>/^开头,结尾$/</h4><p><strong>^</strong>表示只匹配字符串的开头。看下面的例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /^c/;</span><br><span class="line">str=&apos;维生素c&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p>结果为<strong>null</strong> ，因为字符串<strong>‘维生素c’</strong>的开头并不是c，所以匹配失败。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /^c/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 这次则返回c，匹配成功，因为cainiao恰恰是以c开头的。<br> 与<strong>^</strong>相反，<strong>$</strong>则只匹配字符串结尾的字符，同样，看例子:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /c$/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回<strong>null</strong>，表示正则表达式没能在字符串的结尾找到c这个字符。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /c$/;</span><br><span class="line">str=&apos;维生素c&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 这次返回的结果是c，表明匹配成功。</p>
+<hr>
+<h4 id="点“-”"><a href="#点“-”" class="headerlink" title="点“.”"></a>点“.”</h4><p> ‘.’会匹配字符串中除了换行符\n之外的所有字符，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /./;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 结果显示，正则匹配到了字符c。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /./;</span><br><span class="line">str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 这次是b.<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /.+/;</span><br><span class="line">str=&apos;blueidea——经典论坛 好_。&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 结果是”blueidea——经典论坛 好_。”也就是说所有的字符都被匹配掉了，包括一个空格，一个下滑线，和一个破折号。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /^./;</span><br><span class="line">  str=&apos;\ncainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 结果是 null，终于失败了，正则要求字符串的第一个字符不是换行，但是恰恰字符是以\n开始的。</p>
+<hr>
+<h4 id="二选一，正则表达式中的或，“-“"><a href="#二选一，正则表达式中的或，“-“" class="headerlink" title="二选一，正则表达式中的或，“|“"></a>二选一，正则表达式中的或，“|“</h4><p>b|c表示，匹配b或者c。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /b|c/;</span><br><span class="line">str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 结果是b。</p>
+<hr>
+<h4 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /^(b|c).+/;</span><br><span class="line">str=&apos;bbs.blueidea.com&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure>
+<p> 这次的结果是整个串bbs.blueidea.com，机上上面的括号这后，这个正则的意思是，如果字符串的开头是b或者c，那么匹配开头的b或者c以及其后的 所有的非换行字符。 如果你也实验了的话，会发现返回的结果后面多出来一个“,b“，这是()内的b|c所匹配的内容。我们在正则表达式内括号里写的内容会被认为是子正 则表达式，所匹配的结果也会被记录下来供后面使用。我们暂且不去理会这个特性。</p>
+<hr>
+<h4 id="字符集合-abc"><a href="#字符集合-abc" class="headerlink" title="字符集合[abc]"></a>字符集合[abc]</h4><p> <strong>[abc]</strong>表示a或者b或者c中的任意一个字符。例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /^[abc]/;</span><br><span class="line">str=&apos;bbs.blueidea.com&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>返回结果是b</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /^[abc]/;</span><br><span class="line">str=&apos;test&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>这次的结果就是 null了。</strong><br> 我们在字字符集合中使用如下的表示方式:<strong>[a-z],[A-Z],[0-9]</strong>，分别表示小写字母，大写字母，数字。例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /^[a-zA-Z][a-zA-Z0-9_]+/;</span><br><span class="line"> str=&apos;test&apos;;</span><br><span class="line"> execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 结果是整个 ，正则的意思是开头必须是英文字母，后面可以是英文字母或者数字以及下划线。</p>
+<hr>
+<h4 id="反字符集合-abc"><a href="#反字符集合-abc" class="headerlink" title="反字符集合[^abc]"></a>反字符集合[^abc]</h4><p> <strong>^</strong>在正则表达式开始部分的时候表示开头的意思，例如/^c/表示开头是c;但是在字符集和中，它表示的是类似“非“的意思，例如[^abc]就表示不能 是a，b或者c中的任何一个。例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /[^abc]/;</span><br><span class="line">str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>返回的结果是l，因为它是第一个非abc的字符(即第一个b没有匹配)。同样:</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /[^abc]/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>则返回i，前两个字符都是[abc]集合中的。</strong><br> <strong>由此我们可知:[^0-9]表示非数字，[^a-z]表示非小写字母，一次类推。</strong></p>
+<hr>
+<h4 id="边界与非边界"><a href="#边界与非边界" class="headerlink" title="边界与非边界"></a>边界与非边界</h4><p> <strong>\b</strong>表示的边界的意思，也就是说，只有字符串的开头和结尾才算数。例如/\bc/就表示字符串开始的c或者是结尾的c。看下面的例子:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\bc/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>返回结果c。匹配到了左边界的c字符</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\bc/;</span><br><span class="line">str=&apos;维生素c&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>仍然返回c，不过这次返回的是右侧边界的c。</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\bc/;</span><br><span class="line">str=&apos;bcb&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 这次匹配失败，因为bcb字符串中的c被夹在中间，既不在左边界也不再右边界。<br> <strong>与\b对应\B表示非边界</strong>。<br> 例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\Bc/;</span><br><span class="line">str=&apos;bcb&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>这次会成功地匹配到bcb中的c，。然而</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\Bc/;</span><br><span class="line">str=&apos;cainiao&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>则会返回 null。因为\B告诉正则，只匹配非边界的c。</strong></p>
+<hr>
+<h4 id="数字与非数字"><a href="#数字与非数字" class="headerlink" title="数字与非数字"></a>数字与非数字</h4><p> <strong>\d表示数字的意思，相反，\D表示非数字</strong>。例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\d/;</span><br><span class="line">str=&apos;cainiao8&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回的匹配结果为8，因为它是第一个数字字符。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\D/;</span><br><span class="line">str=&apos;cainiao8&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回c，第一个非数字字符。</p>
+<hr>
+<h4 id="空白"><a href="#空白" class="headerlink" title="空白"></a>空白</h4><p> <strong>\f匹配换页符，\n匹配换行符，\r匹配回车，\t匹配制表符，\v匹配垂直制表符。 \s匹配单个空格，等同于[\f\n\r\t\v]。</strong>例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   reg = /\s.+/;</span><br><span class="line">str=&apos;This is a test String.&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回“is a test String.”，正则的意思是匹配第一个空格以及其后的所有非换行字符。<br> <strong>同样，\S表示非空格字符。</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\S+/;</span><br><span class="line">str=&apos;This is a test String.&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p>匹配结果为This，当遇到第一个空格之后，正则就停止匹配了。</p>
+<hr>
+<h4 id="单词字符"><a href="#单词字符" class="headerlink" title="单词字符"></a>单词字符</h4><p><strong>\w表示单词字符，等同于字符集合[a-zA-Z0-9_]</strong>。例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\w+/;</span><br><span class="line"> str=&apos;blueidea&apos;;</span><br><span class="line"> execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回完整的blueidea字符串，因为所有字符都是单词字符。<br> <strong>\W表示非单词字符，等效于[^a-zA-Z0-9_]</strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\W+/;</span><br><span class="line">str=&apos;中文如何?&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回完整的字符串，因为，无论是中文和“?”都算作是非单词字符。</p>
+<hr>
+<h4 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h4><p> 形式如下:<strong>/(子正则表达式)\1/</strong> 依旧用例子来说明:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /\w/;</span><br><span class="line"> str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回b。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /(\w)(\w)/;</span><br><span class="line">str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回bl,b,l。bl是整个正则匹配的内容，b是第一个括号里的子正则表达式匹配的内容，l是第二个括号匹配的内容。</p>
+<hr>
+<h4 id="正向预查"><a href="#正向预查" class="headerlink" title="正向预查"></a>正向预查</h4><p>形式:<strong>(?=pattern)</strong><br>所谓正向预查，意思就是:要匹配的字符串，后面必须紧跟着pattern! 我们知道正则表达式/cainiao/会匹配cainiao。同样，也会匹配cainiao9中的cainiao。但是我们可能希望，cainiao只能匹配cainiao8中的菜鸟。这 时候就可以像下面这样写:/cainiao(?=8)/，看两个实例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /cainiao(?=8)/;</span><br><span class="line">str=&apos;cainiao9&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回 null;<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /cainiao(?=8)/;</span><br><span class="line">  str=&apos;cainiao8&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> <strong>匹配cainiao 。 需要注意的是，括号里的内容并不参与真正的匹配，只是检查一下后面的字符是否符合要求而已，例如上面的正则，返回的是cainiao，而不是 cainiao8。</strong><br>再来看两个例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg = /blue(?=idea)/;</span><br><span class="line"> str=&apos;blueidea&apos;;</span><br><span class="line"> execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 匹配到 blue，而不是blueidea。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /blue(?=idea)/;</span><br><span class="line">str=&apos;bluetooth&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回 ，因为blue后面不是idea。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /blue(?=idea)/;</span><br><span class="line">str=&apos;bluetoothidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 同样返回null 。<br> <strong>?!</strong>形式(?!pattern)和?=恰好相反，要求字符串的后面不能紧跟着某个pattern，还拿上面的例子:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> reg = /blue(?!idea)/;</span><br><span class="line">str=&apos;blueidea&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回null ，因为正则要求，blue的后面不能是idea。</p>
+<hr>
+<h4 id="匹配元字符"><a href="#匹配元字符" class="headerlink" title="匹配元字符"></a>匹配元字符</h4><p>首先要搞清楚什么是元字符呢?我们之前用过<em>,+,?之类的符号，它们在正则表达式中都有一定的特殊含义，类似这些有特殊功能的字符都叫做元字 符。例如 **reg = /c</em>/;<em>*<br>表示有任意个c，但是如果我们真的想匹配’c</em>’这个字符串的时候怎么办呢?只要将*转义了就可以了，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eg = /c\*/;</span><br><span class="line"> str=&apos;c*&apos;;</span><br><span class="line"> execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 返回匹配的字符串:c<em>。<br> <em>*同理，要匹配其他元字符，只要在前面加上一个“\”就可以了。</em></em></p>
+<hr>
+<h4 id="正则表达式的修饰符"><a href="#正则表达式的修饰符" class="headerlink" title="正则表达式的修饰符"></a>正则表达式的修饰符</h4><h5 id="全局匹配，修饰符g"><a href="#全局匹配，修饰符g" class="headerlink" title="全局匹配，修饰符g"></a>全局匹配，修饰符g</h5><p>形式:/pattern/g<br>例子:reg = /b/g;</p>
+<h5 id="不区分大小写，修饰符i"><a href="#不区分大小写，修饰符i" class="headerlink" title="不区分大小写，修饰符i"></a>不区分大小写，修饰符i</h5><p>形式:/pattern/i<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /b/;</span><br><span class="line"> var str = &apos;BBS&apos;;</span><br><span class="line">  execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p>  返回null  ，因为大小写不符合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /b/i;</span><br><span class="line"> var str = &apos;BBS&apos;;</span><br><span class="line"> execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 匹配到B，这个就是i修饰符的作用了。</p>
+<h5 id="行首行尾，修饰符m"><a href="#行首行尾，修饰符m" class="headerlink" title="行首行尾，修饰符m"></a>行首行尾，修饰符m</h5><p> 形式:/pattern/m<br> m修饰符的作用是修改^和$在正则表达式中的作用，让它们分别表示行首和行尾。例如:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = /^b/;</span><br><span class="line">var str = &apos;test\nbbs&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p> 匹配失败，因为字符串的开头没有b字符。但是加上m修饰符之后<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  var reg = /^b/m;</span><br><span class="line">   var str = &apos;test\nbbs&apos;;</span><br><span class="line">execReg(reg,str);</span><br></pre></td></tr></table></figure></p>
+<p>匹配到b，因为加了m修饰符之后，^已经表示行首，由于bbs在字符串第二行的行首，所以可以成功地匹配。</p>
+<hr>
+<h4 id="使用字符串的方法执行正则表达式"><a href="#使用字符串的方法执行正则表达式" class="headerlink" title="使用字符串的方法执行正则表达式"></a>使用字符串的方法执行正则表达式</h4><p><strong>match方法</strong><br>形式:str.match(reg);<br><strong>replace方法</strong><br>形式:str. replace (reg,’new str’);<br><strong>—-关于正则多看看习题集—-</strong></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+       
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/26/jquery/" rel="next" title="jquery">
+                <i class="fa fa-chevron-left"></i> jquery
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/05/es6/" rel="prev" title="es6">
+                es6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/0.jpg"
+                alt="chenmingshuang" />
+            
+              <p class="site-author-name" itemprop="name">chenmingshuang</p>
+              <p class="site-description motion-element" itemprop="description">快乐的小二哈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ximalaya.com/30018073/album/3740790/" title="陪你读书（JavaScript WEB前端）" target="_blank">陪你读书（JavaScript WEB前端）</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.flyingliu.com" title="师兄的博客(绯椛的博客)" target="_blank">师兄的博客(绯椛的博客)</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是正则"><span class="nav-number">1.1.</span> <span class="nav-text">什么是正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式基本语法"><span class="nav-number">1.2.</span> <span class="nav-text">正则表达式基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个正则表达式"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建一个正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式的exec方法简介"><span class="nav-number">1.2.2.</span> <span class="nav-text">正则表达式的exec方法简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-n"><span class="nav-number">1.2.3.</span> <span class="nav-text">c{n}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-m-n"><span class="nav-number">1.2.4.</span> <span class="nav-text">c{m,n}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-n-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">c{n,}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.2.6.</span> <span class="nav-text">*,+,?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贪心-贪婪-与非贪心-非贪婪"><span class="nav-number">1.2.7.</span> <span class="nav-text">贪心(贪婪)与非贪心(非贪婪)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开头-结尾"><span class="nav-number">1.2.8.</span> <span class="nav-text">/^开头,结尾$/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点“-”"><span class="nav-number">1.2.9.</span> <span class="nav-text">点“.”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二选一，正则表达式中的或，“-“"><span class="nav-number">1.2.10.</span> <span class="nav-text">二选一，正则表达式中的或，“|“</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#括号"><span class="nav-number">1.2.11.</span> <span class="nav-text">括号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符集合-abc"><span class="nav-number">1.2.12.</span> <span class="nav-text">字符集合[abc]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反字符集合-abc"><span class="nav-number">1.2.13.</span> <span class="nav-text">反字符集合[^abc]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#边界与非边界"><span class="nav-number">1.2.14.</span> <span class="nav-text">边界与非边界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字与非数字"><span class="nav-number">1.2.15.</span> <span class="nav-text">数字与非数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空白"><span class="nav-number">1.2.16.</span> <span class="nav-text">空白</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词字符"><span class="nav-number">1.2.17.</span> <span class="nav-text">单词字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向引用"><span class="nav-number">1.2.18.</span> <span class="nav-text">反向引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正向预查"><span class="nav-number">1.2.19.</span> <span class="nav-text">正向预查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配元字符"><span class="nav-number">1.2.20.</span> <span class="nav-text">匹配元字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式的修饰符"><span class="nav-number">1.2.21.</span> <span class="nav-text">正则表达式的修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局匹配，修饰符g"><span class="nav-number">1.2.21.1.</span> <span class="nav-text">全局匹配，修饰符g</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不区分大小写，修饰符i"><span class="nav-number">1.2.21.2.</span> <span class="nav-text">不区分大小写，修饰符i</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行首行尾，修饰符m"><span class="nav-number">1.2.21.3.</span> <span class="nav-text">行首行尾，修饰符m</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用字符串的方法执行正则表达式"><span class="nav-number">1.2.22.</span> <span class="nav-text">使用字符串的方法执行正则表达式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenmingshuang</span>
+
+  
+</div>
+
+
+  <div class="powered-by"> <a class="theme-link" target="_blank" href="https://hexo.io"></a> 事无善恶 </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">思想使然 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
